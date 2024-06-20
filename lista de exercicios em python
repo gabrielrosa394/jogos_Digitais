@@ -1,0 +1,187 @@
+#1 codigo
+
+def verificar_numero(numero):
+    if numero < 0:
+        return "Negativo"
+    elif numero == 0:
+        return "Zero"
+    else:
+        return "Positivo"
+
+# Exemplo de uso:
+numero_digitado = float(input("Digite um número: "))
+resultado = verificar_numero(numero_digitado)
+print(f"O número é {resultado}.")
+
+#2 codigo
+
+def maior_entre_dois(n1, n2):
+    if n1 > n2:
+        return n1
+    else:
+        return n2
+
+numero1 = float(input("Digite o primeiro número: "))
+numero2 = float(input("Digite o segundo número: "))
+maior = maior_entre_dois(numero1, numero2)
+print(f"O maior número entre {numero1} e {numero2} é {maior}.")
+
+#3 codigo
+
+def calcular_media(notas):
+    soma = sum(notas)
+    media = soma / len(notas)
+    return media
+
+
+notas_aluno = []
+for i in range(4):
+    nota = float(input(f"Digite a {i+1}ª nota: "))
+    notas_aluno.append(nota)
+
+
+media_aluno = calcular_media(notas_aluno)
+
+
+if media_aluno >= 70:
+    print("Aprovado")
+elif 50 <= media_aluno < 70:
+    print("Recuperação")
+else:
+    print("Reprovado")
+#4codigo
+def calcular_reajuste(salario_atual):
+    if salario_atual <= 280:
+        percentual = 20
+    elif 281 <= salario_atual <= 700:
+        percentual = 15
+    elif 701 <= salario_atual <= 1500:
+        percentual = 10
+    else:
+        percentual = 5
+
+    aumento = salario_atual * (percentual / 100)
+    novo_salario = salario_atual + aumento
+
+    return percentual, aumento, novo_salario
+
+#solicita o salário atual do colaborador
+salario_atual = float(input("Digite o salário atual do colaborador: "))
+
+#calcula o reajuste
+percentual_aumento, valor_aumento, salario_reajustado = calcular_reajuste(salario_atual)
+
+#exibe os resultados
+print(f"Salário antes do reajuste: R$ {salario_atual:.2f}")
+print(f"Percentual de aumento aplicado: {percentual_aumento}%")
+print(f"Valor do aumento: R$ {valor_aumento:.2f}")
+print(f"Novo salário após o aumento: R$ {salario_reajustado:.2f}")
+
+#4codigo
+
+def calcular_reajuste(salario_atual):
+    if salario_atual <= 280:
+        percentual = 20
+    elif 281 <= salario_atual <= 700:
+        percentual = 15
+    elif 701 <= salario_atual <= 1500:
+        percentual = 10
+    else:
+        percentual = 5
+
+    aumento = salario_atual * (percentual / 100)
+    novo_salario = salario_atual + aumento
+
+    return percentual, aumento, novo_salario
+
+#solicita o salário atual do colaborador
+salario_atual = float(input("Digite o salário atual do colaborador: "))
+
+#calcula o reajuste
+percentual_aumento, valor_aumento, salario_reajustado = calcular_reajuste(salario_atual)
+
+#exibe os resultados
+print(f"Salário antes do reajuste: R$ {salario_atual:.2f}")
+print(f"Percentual de aumento aplicado: {percentual_aumento}%")
+print(f"Valor do aumento: R$ {valor_aumento:.2f}")
+print(f"Novo salário após o aumento: R$ {salario_reajustado:.2f}")
+
+#5 codigo
+
+#solicita ao usuário que digite um caractere
+letra = input("Digite uma letra: ").upper()
+
+#verifica se é vogal ou consoante
+if letra.isalpha():
+    if letra in "AEIOU":
+        print("É uma vogal.")
+    else:
+        print("É uma consoante.")
+else:
+    print("Por favor, digite apenas uma letra.")
+
+#6 codigo
+
+#solicita os três números ao usuário
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+num3 = float(input("Digite o terceiro número: "))
+
+#verifica o maior número
+maior = max(num1, num2, num3)
+
+#verifica o menor número
+menor = min(num1, num2, num3)
+
+#verifica se há números iguais
+if num1 == num2 or num1 == num3 or num2 == num3:
+    print("Há números iguais.")
+
+#exibe o resultado
+print(f"O maior número é {maior} e o menor número é {menor}.")
+
+#7 codigo
+
+#solicita os três lados do triângulo
+a = float(input("Digite o primeiro lado: "))
+b = float(input("Digite o segundo lado: "))
+c = float(input("Digite o terceiro lado: "))
+
+#verifica se os lados formam um triângulo
+if (a + b > c) and (a + c > b) and (b + c > a):
+    #testa se é equilátero
+    if a == b == c:
+        print("Triângulo Equilátero")
+    #testa se é isósceles
+    elif a == b or a == c or b == c:
+        print("Triângulo Isósceles")
+    #se não for equilátero nem isósceles, é escaleno
+    else:
+        print("Triângulo Escaleno")
+else:
+    print("Os valores não formam um triângulo.")
+
+#8 codigo
+
+#solicita o email e a senha
+email = input("Digite o email: ")
+senha = input("Digite a senha: ")
+
+#verifica se o usuário é 'admin' e a senha é '123'
+if email == "admin" and senha == "123":
+    print("Usuário logado!")
+elif email == "admin" or senha == "123":
+    print("Usuário ou senha incorretos.")
+else:
+    print("Ambos usuário e senha estão incorretos.")
+
+#9 codigo
+
+#solicita a senha ao usuário
+senha = input("Digite uma senha com pelo menos 8 caracteres: ")
+
+#verifica o tamanho da senha
+if len(senha) >= 8:
+    print("Senha cadastrada com sucesso!")
+else:
+    print("A senha deve ter pelo menos 8 caracteres.")
